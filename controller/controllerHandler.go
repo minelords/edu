@@ -133,18 +133,18 @@ func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 
 ////显示学习成果记录
 //// 显示添加信息页面
-//func (app *Application) AddCaShow(w http.ResponseWriter, r *http.Request)  {
-//	data := &struct {
-//		CurrentUser User
-//		Msg string
-//		Flag bool
-//	}{
-//		CurrentUser:cuser,
-//		Msg:"",
-//		Flag:false,
-//	}
-//	ShowView(w, r, "addCa.html", data)
-//}
+func (app *Application) AddCaShow(w http.ResponseWriter, r *http.Request)  {
+	data := &struct {
+		CurrentUser User
+		Msg string
+		Flag bool
+	}{
+		CurrentUser:cuser,
+		Msg:"",
+		Flag:false,
+	}
+	ShowView(w, r, "addCa.html", data)
+}
 //
 //// 添加信息
 //func (app *Application) AddCa(w http.ResponseWriter, r *http.Request)  {
