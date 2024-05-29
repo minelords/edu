@@ -130,57 +130,59 @@ func (app *Application) AddEdu(w http.ResponseWriter, r *http.Request)  {
 	app.FindCertByNoAndName(w, r)
 }
 
-//显示学习成果记录
-// 显示添加信息页面
-func (app *Application) AddCaShow(w http.ResponseWriter, r *http.Request)  {
-	data := &struct {
-		CurrentUser User
-		Msg string
-		Flag bool
-	}{
-		CurrentUser:cuser,
-		Msg:"",
-		Flag:false,
-	}
-	ShowView(w, r, "addCa.html", data)
-}
 
-// 添加信息
-func (app *Application) AddCa(w http.ResponseWriter, r *http.Request)  {
+////显示学习成果记录
+//// 显示添加信息页面
+//func (app *Application) AddCaShow(w http.ResponseWriter, r *http.Request)  {
+//	data := &struct {
+//		CurrentUser User
+//		Msg string
+//		Flag bool
+//	}{
+//		CurrentUser:cuser,
+//		Msg:"",
+//		Flag:false,
+//	}
+//	ShowView(w, r, "addCa.html", data)
+//}
+//
+//// 添加信息
+//func (app *Application) AddCa(w http.ResponseWriter, r *http.Request)  {
+//
+//	edu := service.Education{
+//		Name:r.FormValue("name"),
+//		School:r.FormValue("school"),
+//		Major:r.FormValue("major"),
+//		Sno:r.FormValue("Sno"),
+//		Date:r.FormValue("date"),
+//		Vertifycode:r.FormValue("vertifycode"),
+//	}
+//
+//	app.Setup.SaveCa(edu)
+//	/*transactionID, err := app.Setup.SaveEdu(edu)
+//
+//	data := &struct {
+//		CurrentUser User
+//		Msg string
+//		Flag bool
+//	}{
+//		CurrentUser:cuser,
+//		Flag:true,
+//		Msg:"",
+//	}
+//
+//	if err != nil {
+//		data.Msg = err.Error()
+//	}else{
+//		data.Msg = "信息添加成功:" + transactionID
+//	}*/
+//
+//	//ShowView(w, r, "addEdu.html", data)
+//	r.Form.Set("certNo", edu.CertNo)
+//	r.Form.Set("name", edu.Name)
+//	app.FindCertByNoAndName(w, r)
+//}
 
-	edu := service.Education{
-		Name:r.FormValue("name"),
-		School:r.FormValue("school"),
-		Major:r.FormValue("major"),
-		Sno:r.FormValue("Sno"),
-		Date:r.FormValue("date"),
-		Vertifycode:r.FormValue("vertifycode"),
-	}
-
-	app.Setup.SaveCa(edu)
-	/*transactionID, err := app.Setup.SaveEdu(edu)
-
-	data := &struct {
-		CurrentUser User
-		Msg string
-		Flag bool
-	}{
-		CurrentUser:cuser,
-		Flag:true,
-		Msg:"",
-	}
-
-	if err != nil {
-		data.Msg = err.Error()
-	}else{
-		data.Msg = "信息添加成功:" + transactionID
-	}*/
-
-	//ShowView(w, r, "addEdu.html", data)
-	r.Form.Set("certNo", edu.CertNo)
-	r.Form.Set("name", edu.Name)
-	app.FindCertByNoAndName(w, r)
-}
 
 func (app *Application) QueryPage(w http.ResponseWriter, r *http.Request)  {
 	data := &struct {

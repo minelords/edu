@@ -28,8 +28,8 @@ func WebStart(app controller.Application)  {
 	http.HandleFunc("/addEduInfo", app.AddEduShow)	// 显示添加信息页面
 	http.HandleFunc("/addEdu", app.AddEdu)	// 提交信息请求
 
-	http.HandleFunc("/addEduCa", app.AddCaShow)	// 显示添加信息页面
-	http.HandleFunc("/addCa", app.AddCa)	// 提交信息请求
+	//http.HandleFunc("/addEduCa", app.AddCaShow)	// 显示添加信息页面
+	//http.HandleFunc("/addCa", app.AddCa)	// 提交信息请求
 
 	http.HandleFunc("/queryPage", app.QueryPage)	// 转至根据证书编号与姓名查询信息页面
 	http.HandleFunc("/query", app.FindCertByNoAndName)	// 根据证书编号与姓名查询信息
@@ -38,8 +38,8 @@ func WebStart(app controller.Application)  {
 	http.HandleFunc("/query2", app.FindByID)	// 根据身份证号码查询信息
 
 
-	//http.HandleFunc("/modifyPage", app.ModifyShow)	// 修改信息页面
-	//http.HandleFunc("/modify", app.Modify)	//  修改信息
+	http.HandleFunc("/modifyPage", app.ModifyShow)	// 修改信息页面
+	http.HandleFunc("/modify", app.Modify)	//  修改信息
 
 	http.HandleFunc("/upload", app.UploadFile)
 
